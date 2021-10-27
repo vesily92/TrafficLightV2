@@ -7,10 +7,62 @@
 
 import SwiftUI
 
+enum LightColor {
+    case red
+    case yellow
+    case green
+}
+
 struct ContentView: View {
+    
+    @State private var label = "START"
+    @State private var lightColor = LightColor.red
+    
+    @State private var redAlpha = 0.3
+    @State private var yellowAlpha = 0.3
+    @State private var greenAlpha = 0.3
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack {
+            Color.black
+                .ignoresSafeArea()
+            VStack {
+                LightView(opacity: redAlpha, color: .red)
+                LightView(opacity: yellowAlpha, color: .yellow)
+                LightView(opacity: greenAlpha, color: .green)
+                Spacer()
+                Button(action: { buttonTapped() }) {
+                    Text(label)
+                        .bold()
+                        .font(.title)
+                        .foregroundColor(.white)
+                }
+                .frame(width: 180, height: 50)
+                .background(Color.blue)
+                .cornerRadius(10)
+                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.white, lineWidth: 4))
+                .padding()
+            }
+        }
+    }
+    
+    private func buttonTapped() {
+        if label == "START" { label = "NEXT" }
+        
+        switch lightColor {
+        case .red:
+            redAlpha = 1
+            greenAlpha = 0.3
+            lightColor = .yellow
+        case .yellow:
+            redAlpha = 0.3
+            yellowAlpha = 1
+            lightColor = .green
+        case .green:
+            yellowAlpha = 0.3
+            greenAlpha = 1
+            lightColor = .red
+        }
     }
 }
 
