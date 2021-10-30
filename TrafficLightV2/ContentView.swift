@@ -8,49 +8,52 @@
 import SwiftUI
 
 enum LightColor {
-    case red
-    case yellow
-    case green
+    case red, yellow, green
 }
 
 struct ContentView: View {
     
-    @State private var label = "START"
+    @State private var buttonLabel = "START"
     @State private var lightColor = LightColor.red
     
-    @State private var redAlpha = 0.3
-    @State private var yellowAlpha = 0.3
-    @State private var greenAlpha = 0.3
+    @State private var redState = 0.3
+    @State private var yellowState = 0.3
+    @State private var greenState = 0.3
     
     var body: some View {
         ZStack {
             Color.black
                 .ignoresSafeArea()
-            VStack {
-                LightView(opacity: redAlpha, color: .red)
-                LightView(opacity: yellowAlpha, color: .yellow)
-                LightView(opacity: greenAlpha, color: .green)
+            VStack(spacing: 20) {
+                LightView(opacity: redState, color: .red)
+                LightView(opacity: yellowState, color: .yellow)
+                LightView(opacity: greenState, color: .green)
                 Spacer()
-                ButtonView(action: buttonTapped, label: label)
+                ButtonView(label: buttonLabel) {
+                    if buttonLabel == "START" { buttonLabel = "NEXT" }
+                    switchLight()
+                }
             }
         }
     }
     
-    private func buttonTapped() {
-        if label == "START" { label = "NEXT" }
+    private func switchLight() {
+        
+        let turnedOn = 1.0
+        let turnedOff = 0.3
         
         switch lightColor {
         case .red:
-            redAlpha = 1
-            greenAlpha = 0.3
+            redState = turnedOn
+            greenState = turnedOff
             lightColor = .yellow
         case .yellow:
-            redAlpha = 0.3
-            yellowAlpha = 1
+            redState = turnedOff
+            yellowState = turnedOn
             lightColor = .green
         case .green:
-            yellowAlpha = 0.3
-            greenAlpha = 1
+            yellowState = turnedOff
+            greenState = turnedOn
             lightColor = .red
         }
     }
