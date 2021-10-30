@@ -18,6 +18,11 @@ struct LightView: View {
             .opacity(opacity)
             .clipShape(Circle())
             .overlay(Circle().stroke(Color.white, lineWidth: 4))
-            .padding(.top)
+    }
+}
+
+struct LightView_Previews: PreviewProvider {
+    static var previews: some View {
+        LightView(opacity: 1, color: .red)
     }
 }

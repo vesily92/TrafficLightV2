@@ -12,6 +12,7 @@
 		7B21DE812729DFDE000951C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B21DE802729DFDE000951C3 /* Assets.xcassets */; };
 		7B21DE842729DFDE000951C3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B21DE832729DFDE000951C3 /* Preview Assets.xcassets */; };
 		7B21DE8B2729E02E000951C3 /* LightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21DE8A2729E02E000951C3 /* LightView.swift */; };
+		7B9AED9C272D9621009111DF /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9AED9B272D9621009111DF /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		7B21DE802729DFDE000951C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B21DE832729DFDE000951C3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7B21DE8A2729E02E000951C3 /* LightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightView.swift; sourceTree = "<group>"; };
+		7B9AED9B272D9621009111DF /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			children = (
 				7B21DE7C2729DFDA000951C3 /* TrafficLightV2App.swift */,
 				7B21DE7E2729DFDB000951C3 /* ContentView.swift */,
+				7B9AED9B272D9621009111DF /* ButtonView.swift */,
 				7B21DE8A2729E02E000951C3 /* LightView.swift */,
 				7B21DE802729DFDE000951C3 /* Assets.xcassets */,
 				7B21DE822729DFDE000951C3 /* Preview Content */,
@@ -142,6 +145,7 @@
 			files = (
 				7B21DE7F2729DFDB000951C3 /* ContentView.swift in Sources */,
 				7B21DE8B2729E02E000951C3 /* LightView.swift in Sources */,
+				7B9AED9C272D9621009111DF /* ButtonView.swift in Sources */,
 				7B21DE7D2729DFDA000951C3 /* TrafficLightV2App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

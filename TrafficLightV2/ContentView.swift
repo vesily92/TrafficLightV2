@@ -31,17 +31,7 @@ struct ContentView: View {
                 LightView(opacity: yellowAlpha, color: .yellow)
                 LightView(opacity: greenAlpha, color: .green)
                 Spacer()
-                Button(action: { buttonTapped() }) {
-                    Text(label)
-                        .bold()
-                        .font(.title)
-                        .foregroundColor(.white)
-                }
-                .frame(width: 180, height: 50)
-                .background(Color.blue)
-                .cornerRadius(10)
-                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.white, lineWidth: 4))
-                .padding()
+                ButtonView(action: buttonTapped, label: label)
             }
         }
     }
